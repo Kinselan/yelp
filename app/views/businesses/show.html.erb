@@ -1,0 +1,24 @@
+<h1><%= @business.name %></h1>
+
+<dl>
+  <dt>Address</dt>
+  <dd><%= @business.address %></dd>
+  <dt>Telephone</dt>
+  <dd><%= @business.telephone %></dd>
+</dl>
+
+<% if logged_in? %>
+	<%= form_for [@business, @review] do |f| %>
+		<%= f.label :description, 'Leave a review' %>
+		<%= f.text_area :description %>
+		<%= f.submit('Create Review') %>
+	<% end %>
+<% end %>
+
+<h3>Reviews of <%= @business.name %>:</h3
+
+<ul>
+  <% @business.reviews.each do |review| %>
+    <li><%= link_to(review.user.name, user_path(review.user)) %> said: "<%= review.description %></li>
+  <% end %>
+</ul>

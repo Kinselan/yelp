@@ -1,0 +1,20 @@
+<h1>Add a new business</h1>
+
+
+<%= form_for @business do |f| %>
+  Name: <%= f.text_field :name %><br>
+  Address: <%= f.text_field :address %><br>
+  Telephone: <%= f.text_field :telephone %><br>
+  <%= f.submit %>
+<% end %>
+
+
+
+
+<!--
+  <%= form_for :user do |f| %>
+    Email: <%= f.text_field :email %><br>
+    Name: <%= f.text_field :name %><br>
+    Password: <%= f.password_field :password %><br>
+    <%= f.submit %>
+  <% end %> -->

@@ -1,0 +1,9 @@
+<h1><%= @user.name %>'s Profile</h1>
+
+<h3><%= @user.name %> has made xx posts:</h3>
+
+<ul>
+  <% @user.reviews.each do |review| %>
+    <li><%= link_to(review.business.name, business_path(review.business)) %>: <%= review.description %></li>
+  <% end %>
+</ul>

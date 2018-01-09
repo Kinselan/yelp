@@ -1,0 +1,8 @@
+<h1>Yelp</h1>
+
+<h2>Businesses</h2>
+<ol>
+  <% @businesses.each do |business| %>
+    <li><%= link_to(business.name, business_path(business)) %></li>
+  <% end %>
+</ol>
